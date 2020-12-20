@@ -1,27 +1,38 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { TextDecoder } from 'util';
+import { parseJSXtoJSONfromFile } from './services/parseJSXtoJSONfromFile';
+import { TestHierarchyProvider } from './vscode-components/test-hierachy-provider';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "helloworldofextension" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('helloworldofextension.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from helloworldofextension!');
 	});
 
-	context.subscriptions.push(disposable);
+	let disposable2 = vscode.commands.registerCommand('helloworldofextension.jsxTreeView', () => {
+		const editor: vscode.TextEditor | undefined =
+        	vscode.window.activeTextEditor;
+		if (!editor) {
+			return;
+		}
+		const fileText = editor.document.getText();
+		const jsonForTreeView = parseJSXtoJSONfromFile(fileText);
+		vscode.window.showInformationMessage(editor.document.getText());
+	});
+
+	const disposable3 = vscode.languages.registerCallHierarchyProvider('plaintext', new TestHierarchyProvider());
+
+	// context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable2);
+	context.subscriptions.push(disposable3);
+	showSampleText(context);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}
+
+async function showSampleText(context: vscode.ExtensionContext): Promise<void> {
+	const sampleTextEncoded = await vscode.workspace.fs.readFile(vscode.Uri.file(context.asAbsolutePath('TestComponent.txt')));
+	const sampleText = new TextDecoder('utf-8').decode(sampleTextEncoded);
+	const doc = await vscode.workspace.openTextDocument({ language: 'plaintext', content: sampleText });
+	vscode.window.showTextDocument(doc);
+}

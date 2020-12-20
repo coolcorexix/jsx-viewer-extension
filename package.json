@@ -1,5 +1,5 @@
 {
-  "name": "helloworldofextension",
+	"name": "helloworldofextension",
 	"displayName": "helloworldofextension",
 	"description": "just a dummy shit ",
 	"version": "0.0.1",
@@ -10,7 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:helloworldofextension.helloWorld"
+		"onLanguage:plaintext",
+		"onCommand:helloworldofextension.helloWorld",
+		"onCommand:helloworldofextension.jsxTreeView"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -18,6 +20,10 @@
 			{
 				"command": "helloworldofextension.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "helloworldofextension.jsxTreeView",
+				"title": "Parse JSX to JSON"
 			}
 		]
 	},
@@ -33,19 +39,25 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.51.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.4",
 		"@types/node": "^12.11.7",
-		"eslint": "^7.15.0",
+		"@types/vscode": "^1.51.0",
 		"@typescript-eslint/eslint-plugin": "^4.9.0",
 		"@typescript-eslint/parser": "^4.9.0",
+		"eslint": "^7.15.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.1.3",
+		"ts-loader": "^8.0.11",
 		"typescript": "^4.1.2",
 		"vscode-test": "^1.4.1",
-		"ts-loader": "^8.0.11",
 		"webpack": "^5.10.0",
 		"webpack-cli": "^4.2.0"
+	},
+	"dependencies": {
+		"react-json-parser": "^0.2.1",
+		"babel-traverse": "^6.26.0",
+		"babel-types": "^6.26.0",
+		"babylon": "^6.18.0"
 	}
 }
