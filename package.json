@@ -1,10 +1,11 @@
 {	
+	"icon": "https://imgur.com/8DzGP2X",
 	"publisher": "nemothecollector",
 	"name": "jsx-quick-keyboard",
 	"displayName": "JSX Quick Keyboard",
 	"repository": "https://github.com/coolcorexix/jsx-viewer-extension",
 	"description": "Quickly move your cursor among JSX tags and get better overview of your components",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"engines": {
 		"vscode": "^1.51.0"
 	},
