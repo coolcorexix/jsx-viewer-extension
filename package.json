@@ -1,8 +1,10 @@
-{
-	"name": "helloworldofextension",
-	"displayName": "helloworldofextension",
-	"description": "just a dummy shit ",
-	"version": "0.0.1",
+{	
+	"publisher": "nemothecollector",
+	"name": "jsx-quick-keyboard",
+	"displayName": "JSX Quick Keyboard",
+	"repository": "https://github.com/coolcorexix/jsx-viewer-extension",
+	"description": "Quickly move your cursor among JSX tags and get better overview of your components",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.51.0"
 	},
@@ -10,22 +12,21 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:plaintext",
-		"onCommand:helloworldofextension.helloWorld",
-		"onCommand:helloworldofextension.jsxTreeView"
+		"onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescript",
+		"onLanguage:typescriptreact",
+		"onLanguage:plaintext"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "helloworldofextension.helloWorld",
-				"title": "Hello World"
-			},
-			{
-				"command": "helloworldofextension.jsxTreeView",
-				"title": "Parse JSX to JSON"
+		"keybindings": [
+            {
+				"key": "shift+cmd+a",
+				"command": "editor.showCallHierarchy",
+				"when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
 			}
-		]
+        ]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",

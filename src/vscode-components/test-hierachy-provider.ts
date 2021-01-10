@@ -49,7 +49,7 @@ export class TestHierarchyProvider implements vscode.CallHierarchyProvider {
             new vscode.Position(json.sourceLocation.line - 1, json.sourceLocation.column + 1)
         );
         const newItem: IJsxBrowsingHierarchyItem = new vscode.CallHierarchyItem(vscode.SymbolKind.Object,
-            json.type, 'ass',
+            json.type, json.otherThanChildrenProps,
             document.uri,
             range, range);
         newItem.jsxBrowsing = json;

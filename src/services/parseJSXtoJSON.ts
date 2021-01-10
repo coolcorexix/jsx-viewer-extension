@@ -16,6 +16,7 @@ interface INode {
 export type IOutputJSON = {
     id: number;
     type: string;
+    otherThanChildrenProps: string;
     sourceLocation: ISouceLocation;
     nested?: IOutputJSON[];
 };
@@ -33,7 +34,15 @@ export function parseJSXtoJSON(parentNode: INode): IOutputJSON {
         id: assignedId,
         type,
         sourceLocation,
+        otherThanChildrenProps: '',
     };
+    if (props) {
+        Object.keys(props).forEach(key => {
+            if (key !== 'children' && props[key]) {
+                rs.otherThanChildrenProps+= `${key}: ${props[key]}, `;
+            }
+        });
+    }
     if (props && props.children) {
         props.children.forEach((child: any) => {
             if (!!child.type) {
