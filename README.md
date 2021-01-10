@@ -6,6 +6,7 @@ Mouselessly move your cursor among JSX tags and get overview of your components
 NOTICE: this is just a proof of concept, it will be a long road till it can be used in production. Please remove the extension once you done testing, otherwise it will cause annoying pop-up file whenever you open vscode.
 
 ## Usage
+A plaintext file will pop up automaticly, you can work right on that.
 Press `cmd+shift+a` to display nesting structure of the React component (in plaintext file) and move by arrow keys to go to nodes.
 
 ![demo](demo.png "demo")
