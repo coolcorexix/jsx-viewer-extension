@@ -12,5 +12,3 @@ export function activate(context: vscode.ExtensionContext) {
 	const disposable3 = vscode.languages.registerCallHierarchyProvider(selector, new TestHierarchyProvider());
 	context.subscriptions.push(disposable3);
 }
-
-export function deactivate() {}

@@ -1,4 +1,3 @@
-import { type } from 'os';
 import * as vscode from 'vscode';
 import { IOutputJSON } from '../services/parseJSXtoJSON';
 import { parseJSXtoJSONfromFile } from '../services/parseJSXtoJSONfromFile';

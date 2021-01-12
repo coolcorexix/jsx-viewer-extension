@@ -47,8 +47,7 @@ export const parseJSXfromFile = (code, options = {}) => {
     },
     JSXOpeningElement: {
       enter(path) {
-        const { name } = path.node
-        console.log(name.name, ': ', path.node.loc.start.line);
+        const { name } = path.node;
 
         let node = {}
         node.sourceLocation= {
@@ -69,7 +68,6 @@ export const parseJSXfromFile = (code, options = {}) => {
           if (level === 1) {
             tree = node
           } else {
-            console.log(node);
             addChild(path.parentPath.parentPath.node, node)
           }
         }
