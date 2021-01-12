@@ -9,7 +9,7 @@ NOTICE: this is just a proof of concept, it will be a long road till it can be u
 A plaintext file will pop up automaticly, you can work right on that.
 Press `cmd+shift+a` to display nesting structure of the React component (in plaintext file) and move by arrow keys to go to nodes.
 
-![demo](demo.png "demo")
+![demo](https://i.imgur.com/SbruQ8b.png "demo")
 
 ## Release Notes
 
