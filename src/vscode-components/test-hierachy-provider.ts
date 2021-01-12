@@ -8,7 +8,6 @@ type IJsxBrowsingHierarchyItem =  vscode.CallHierarchyItem & {jsxBrowsing?: IOut
 export class TestHierarchyProvider implements vscode.CallHierarchyProvider {
     
     prepareCallHierarchy(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.CallHierarchyItem | undefined {
-        vscode.window.showInformationMessage('prepareCallHierarchy');
         const fileText = document.getText();
         const jsonForTreeView = parseJSXtoJSONfromFile(fileText);
   

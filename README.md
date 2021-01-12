@@ -21,6 +21,9 @@ Press `cmd+shift+a` to display nesting structure of the React component (in plai
 ### 0.0.2
 -   Make it work but still only for plaintext file
 
+### 0.1.0
+-   First production version
+
 ### Taking feedback
 
 Please fillout this form if you have any feedback: **coming soon**

@@ -9,20 +9,8 @@ export function activate(context: vscode.ExtensionContext) {
         selector.push({ language, scheme: 'file' });
         selector.push({ language, scheme: 'untitled' });
 	}
-	const disposable3 = vscode.languages.registerCallHierarchyProvider([...selector, {
-		scheme: 'file',
-		pattern: '**/*.trx',
-	}, 'plaintext'], 
-		new TestHierarchyProvider());
+	const disposable3 = vscode.languages.registerCallHierarchyProvider(selector, new TestHierarchyProvider());
 	context.subscriptions.push(disposable3);
-	showSampleText(context);
 }
 
-export function deactixvate() {}
-
-async function showSampleText(context: vscode.ExtensionContext): Promise<void> {
-	const sampleTextEncoded = await vscode.workspace.fs.readFile(vscode.Uri.file(context.asAbsolutePath('TestComponent.trx')));
-	const sampleText = new TextDecoder('utf-8').decode(sampleTextEncoded);
-	const doc = await vscode.workspace.openTextDocument({ language: 'plaintext', content: sampleText });
-	vscode.window.showTextDocument(doc);
-}
+export function deactivate() {}

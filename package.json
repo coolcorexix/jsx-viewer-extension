@@ -5,7 +5,7 @@
 	"displayName": "JSX Quick Keyboard",
 	"repository": "https://github.com/coolcorexix/jsx-viewer-extension",
 	"description": "Quickly move your cursor among JSX tags and get better overview of your components",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.51.0"
 	},
@@ -28,7 +28,7 @@
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
 		"compile": "webpack --devtool nosources-source-map --config ./build/node-extension.webpack.config.js",
-		"watch": "webpack --watch --devtool nosources-source-map --info-verbosity verbose --config ./build/node-extension.webpack.config.js",
+		"watch": "webpack --watch --devtool nosources-source-map --config ./build/node-extension.webpack.config.js &",
 		"package": "webpack --mode production --config ./build/node-extension.webpack.config.js",
 		"test-compile": "tsc -p ./",
 		"test-watch": "tsc -watch -p ./",
