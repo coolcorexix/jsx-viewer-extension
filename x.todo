@@ -1,0 +1,11 @@
+Week 1:
+	✔ Summon the old memory back @done(22-07-31 10:34)
+		✔ Start it locally @done(22-07-31 10:34)
+		lore: run extension test with a debug tool
+	✔ Find an alternative for or fix callHierarchy @done(22-07-31 13:21)
+		✔ Raise in on vscode slack @done(22-07-31 11:05)
+		app: progress further with DocumentSymbolProvider
+	✔ Nest JSX into current DocumentSymbolProvider @done(22-07-31 13:21)
+	☐ Solve Thenable does not resolve problem
+
+

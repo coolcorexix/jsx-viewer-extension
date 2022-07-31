@@ -1,4 +1,8 @@
 
 {
+	"todo.colors.comment": "#b76e79", // Comment color
+    "todo.tags.names": ["critical", "high", "low", "today", "here"],
+    "todo.colors.tags.foreground": ["#000000", "#000000", "#000000", "#000000", "#000000"], // Special tags' foreground colors
+    "todo.colors.tags.background": ["#ff0000", "#ffa500", "#ffff00", "#00ff00", "#74ee15"],
 	"editor.insertSpaces": false
 }

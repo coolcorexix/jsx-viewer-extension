@@ -1,4 +1,4 @@
-{	
+{
 	"icon": "jsx-quick-keyboard-logo.png",
 	"publisher": "nemothecollector",
 	"name": "jsx-quick-keyboard",
@@ -17,13 +17,7 @@
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
-		"keybindings": [
-            {
-				"key": "shift+cmd+a",
-				"command": "editor.showCallHierarchy",
-				"when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
-			}
-        ]
+		"keybindings": []
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
