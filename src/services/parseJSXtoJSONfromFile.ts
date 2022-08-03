@@ -1,9 +1,10 @@
 import { parseJSXfromFile } from './parseJSXfromFile';
-import { parseJSXtoJSON } from './parseJSXtoJSON';
+import { IOutputJSON, parseJSXtoJSON } from './parseJSXtoJSON';
 
-export function parseJSXtoJSONfromFile(fileStringContent: string) {
-    const outputJSX = parseJSXfromFile(fileStringContent);
-    const outputJSON = parseJSXtoJSON(outputJSX);
+export function parseJSXtoJSONfromFile(fileStringContent: string): IOutputJSON[] {
+    const outputJSXs = parseJSXfromFile(fileStringContent);
+    
+    const outputJSONs = outputJSXs.map(outputJSX => parseJSXtoJSON(outputJSX)) ;
 
-    return outputJSON;
+    return outputJSONs;
 }

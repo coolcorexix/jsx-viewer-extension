@@ -7,5 +7,19 @@ Week 1:
 		app: progress further with DocumentSymbolProvider
 	✔ Nest JSX into current DocumentSymbolProvider @done(22-07-31 13:21)
 	☐ Solve Thenable does not resolve problem
+		thought: this maybe unfixable
+	✔ Solve the Parsed not add to Symbol list problem @done(22-07-31 18:32)
+		✔ Open a bunch of issue and tag every one @done(22-07-31 18:29)
+		✔ Clone code of Todo+ to see an example @done(22-07-31 18:29)
+		lore: turn out I can not add an Object interface Document Symbol 
+			and hope for vsc to understandz. I have to instanitate a DocumentSymbol -
+			something from OOP that I for long have neglected
+		✔ Choose the suitable SymbolKind @done(22-07-31 18:32)
+		app: the winner is Field -> some content for build in public
+	✔ Make it work for multiple JSX in one file @done(22-08-03 22:14)
+	☐ Make it work with Typescript (file using generic type)
+
+
+
 
 

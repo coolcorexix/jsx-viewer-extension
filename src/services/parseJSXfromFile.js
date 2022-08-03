@@ -1,6 +1,7 @@
-const babylon = require('babylon')
+const babylon = require('@babel/parser')
 const traverse = require('babel-traverse').default
 const types = require('babel-types')
+const { writeFileSync } = require('fs')
 
 const addChild = (parent, child) => {
   const parentNode = parent.__node
@@ -25,7 +26,7 @@ const getParentType = node => {
   }
 }
 
-export const parseJSXfromFile = (code, options = {}) => {
+const parseJSXfromFile = (code, options = {}) => {
   const allowPlainText = options.plainText !== false
   const isAllowed =
     options.only && options.only.length
@@ -33,6 +34,8 @@ export const parseJSXfromFile = (code, options = {}) => {
       : () => true
 
   const ast = babylon.parse(code, { plugins: ['jsx', 'flow'], sourceType: 'module' })
+  writeFileSync('./ast.json', JSON.stringify(ast, null, 2));
+  let trees = [];
   let tree
   let level = 0
 
@@ -66,6 +69,7 @@ export const parseJSXfromFile = (code, options = {}) => {
         if (node && isAllowed(node.type)) {
           path.parent.__node = node
           if (level === 1) {
+            trees.push(node)
             tree = node
           } else {
             addChild(path.parentPath.parentPath.node, node)
@@ -94,5 +98,8 @@ export const parseJSXfromFile = (code, options = {}) => {
     },
   })
 
-  return tree
+  console.log("🚀 ~ file: parseJSXfromFile.js ~ line 102 ~ parseJSXfromFile ~ trees", trees.map(t => t.props.children));
+  return trees
 }
+
+module.exports = { parseJSXfromFile }

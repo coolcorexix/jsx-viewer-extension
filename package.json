@@ -47,9 +47,10 @@
 		"webpack-cli": "^4.2.0"
 	},
 	"dependencies": {
-		"react-json-parser": "^0.2.1",
+		"@babel/parser": "^7.18.10",
 		"babel-traverse": "^6.26.0",
 		"babel-types": "^6.26.0",
-		"babylon": "^6.18.0"
+		"babylon": "^6.18.0",
+		"react-json-parser": "^0.2.1"
 	}
 }

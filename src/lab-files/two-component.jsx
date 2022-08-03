@@ -70,10 +70,10 @@ export default function Home() {
 export function Home2() {
   return (
     <div className={styles.container}>
-      <Head>
+      <Head2>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head2>
 
       <main className={styles.main}>
         <SearchBar />

@@ -10,8 +10,6 @@ export function activate(context: vscode.ExtensionContext) {
         selector.push({ language, scheme: 'file' });
         selector.push({ language, scheme: 'untitled' });
 	}
-	const disposableDocumentProvider = vscode.languages.registerDocumentSymbolProvider(selector, new JSXDocumentSymbolProvider(), {
-		label: 'jsx'
-	});
+	const disposableDocumentProvider = vscode.languages.registerDocumentSymbolProvider(selector, new JSXDocumentSymbolProvider());
 	context.subscriptions.push(disposableDocumentProvider);
 }
