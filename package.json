@@ -1,59 +1,58 @@
 {
-	"icon": "jsx-quick-keyboard-logo.png",
-	"publisher": "nemothecollector",
-	"name": "jsx-quick-keyboard",
-	"displayName": "JSX Quick Keyboard",
-	"repository": "https://github.com/coolcorexix/jsx-viewer-extension",
-	"description": "Quickly move your cursor among JSX tags and get better overview of your components",
-	"version": "0.1.3",
-	"engines": {
-		"vscode": "^1.51.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"keybindings": []
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack --devtool nosources-source-map --config ./build/node-extension.webpack.config.js",
-		"watch": "webpack --watch --devtool nosources-source-map --config ./build/node-extension.webpack.config.js &",
-		"package": "webpack --mode production --config ./build/node-extension.webpack.config.js",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/babel__traverse": "^7.18.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.51.0",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
-		"eslint": "^7.15.0",
-		"glob": "^7.1.6",
-		"mocha": "^8.1.3",
-		"ts-loader": "^8.0.11",
-		"typescript": "^4.1.2",
-		"vscode-test": "^1.4.1",
-		"webpack": "^5.10.0",
-		"webpack-cli": "^4.2.0"
-	},
-	"dependencies": {
-		"@babel/parser": "^7.18.10",
-		"@babel/preset-react": "^7.18.6",
-		"@babel/preset-typescript": "^7.18.6",
-		"babel-traverse": "^6.26.0",
-		"babel-types": "^6.26.0",
-		"babylon": "^6.18.0",
-		"react-json-parser": "^0.2.1"
-	}
+  "icon": "jsx-quick-keyboard-logo.png",
+  "publisher": "nemothecollector",
+  "name": "jsx-breadcrumbs",
+  "displayName": "JSX Breadcrumbs",
+  "repository": "https://github.com/coolcorexix/jsx-viewer-extension",
+  "description": "Improve your DX with ReactJs by adding document symbols of React component to breadcrumbs.focusAndSelect result",
+  "version": "0.1.3",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "keybindings": []
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack --devtool nosources-source-map --config ./build/node-extension.webpack.config.js",
+    "watch": "webpack --watch --devtool nosources-source-map --config ./build/node-extension.webpack.config.js &",
+    "package": "webpack --mode production --config ./build/node-extension.webpack.config.js",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.18.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.51.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "^7.15.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "vscode-test": "^1.4.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "babel-traverse": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "react-json-parser": "^0.2.1"
+  }
 }

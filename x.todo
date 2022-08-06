@@ -22,15 +22,26 @@ Week 1:
 		☐ @later config 2 providers - one for js (flow-supported) and one for ts, currently using one and not flow-supported
 	✔ Make it work with Typescript (file using generic type) @done(22-08-06 11:07)
 		thought: this is for free :D
-	☐ Try to make cursor point to JSX breadcrumb if it meant to be
-		thought: it currently work with outermost breadcrumb
+	✔ Try to make cursor point to JSX breadcrumb if it meant to be @done(22-08-06 14:50)
+		✔ Choose breadcrumb based on current cursor position @done(22-08-06 14:50)	
+		✔ thought: it currently work with outermost breadcrumb @done(22-08-06 14:50)
 		✔ Try with mock with correct range open/close to see if it serve the assumption @done(22-08-06 14:16)
 		lore: my assumption was right!
-		☐ Update range of component start with open tag and end with close tag
+		✔ Update range of component start with open tag and end with close tag @done(22-08-06 14:50)
 
 	☐ Add more detail to the outermost JSX (its nearest parent function)
-	☐ Choose breadcrumb based on current cursor position
-	☐ Combine two provider result into one
+	thought: I should wait and see if user want it, me too I want to experience it a few day before giving more feature
+	✘ Combine two provider result into one @cancelled(22-08-06 14:50)
+	thought: this is undoable 
+	☐ @later write test
+	thought: considering it...
+	☐ Publish it VS Code extension
+	☐ Write some README
+	☐ Test it for myself
+	☐ DM to five people I know who will love this extension
+	☐ Build backlink
+	☐ Logo
+	☐ Content to promote the extension, including thank authors of `react-json-parser`
 
 
 
