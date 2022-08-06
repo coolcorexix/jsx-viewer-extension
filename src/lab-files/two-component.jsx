@@ -127,6 +127,7 @@ export function Home2() {
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
+      <gra />
     </div>
   )
 }

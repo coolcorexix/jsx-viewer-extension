@@ -17,7 +17,20 @@ Week 1:
 		✔ Choose the suitable SymbolKind @done(22-07-31 18:32)
 		app: the winner is Field -> some content for build in public
 	✔ Make it work for multiple JSX in one file @done(22-08-03 22:14)
-	☐ Make it work with Typescript (file using generic type)
+	✘ Update with latest set up of babel to help wider use case (for free) @cancelled(22-08-06 11:06)
+		lore: it is not equivalent to plugins preset in babelrc. 3 options are : jsx, typescript and flow
+		☐ @later config 2 providers - one for js (flow-supported) and one for ts, currently using one and not flow-supported
+	✔ Make it work with Typescript (file using generic type) @done(22-08-06 11:07)
+		thought: this is for free :D
+	☐ Try to make cursor point to JSX breadcrumb if it meant to be
+		thought: it currently work with outermost breadcrumb
+		✔ Try with mock with correct range open/close to see if it serve the assumption @done(22-08-06 14:16)
+		lore: my assumption was right!
+		☐ Update range of component start with open tag and end with close tag
+
+	☐ Add more detail to the outermost JSX (its nearest parent function)
+	☐ Choose breadcrumb based on current cursor position
+	☐ Combine two provider result into one
 
 
 

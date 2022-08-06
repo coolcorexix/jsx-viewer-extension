@@ -1,10 +1,16 @@
-interface ISouceLocation  {
-    line: number;
-    column: number;
+interface ISouceLocation {
+    start: {
+        line: number;
+        column: number;
+    },
+    end: {
+        line: number;
+        column: number;
+    },
+
 };
 
 interface INode {
-    id: number;
     type: string;
     sourceLocation: ISouceLocation;
     props: {
@@ -29,7 +35,7 @@ export function parseJSXtoJSON(parentNode: INode): IOutputJSON {
         type,
         sourceLocation,
         props,
-    } =  parentNode;
+    } = parentNode;
     const rs: IOutputJSON = {
         id: assignedId,
         type,
@@ -39,7 +45,7 @@ export function parseJSXtoJSON(parentNode: INode): IOutputJSON {
     if (props) {
         Object.keys(props).forEach(key => {
             if (key !== 'children' && props[key]) {
-                rs.otherThanChildrenProps+= `${key}: ${props[key]}, `;
+                rs.otherThanChildrenProps += `${key}: ${props[key]}, `;
             }
         });
     }
@@ -52,7 +58,7 @@ export function parseJSXtoJSON(parentNode: INode): IOutputJSON {
                 rs.nested.push(parseJSXtoJSON(child));
             }
         });
-    } 
-    
+    }
+
     return rs;
 }
