@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 
 function SelfClose() {
@@ -7,7 +8,6 @@ function SelfClose() {
         t={t}
         i18nKey="library.topbar.notification.createShortcut.duplicateInFolder"
         values={{ folderName: propsDuplicateModal.folderName }}
-        // eslint-disable-next-line react/jsx-key
         components={[<b />]}
       />
       <a />

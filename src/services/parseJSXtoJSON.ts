@@ -1,4 +1,5 @@
-interface ISouceLocation {
+
+type ISouceLocation = Partial<{
     start: {
         line: number;
         column: number;
@@ -7,8 +8,7 @@ interface ISouceLocation {
         line: number;
         column: number;
     },
-
-};
+}>;
 
 interface INode {
     type: string;

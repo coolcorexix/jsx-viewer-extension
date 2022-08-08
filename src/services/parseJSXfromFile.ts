@@ -1,3 +1,5 @@
+// @ts-nocheck
+// this is a legacy from react json parser so better accept type error 
 import * as babelParser from '@babel/parser';
 import traverse from '@babel/traverse'
 import * as babelTypesDetector from '@babel/types'

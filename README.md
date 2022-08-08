@@ -1,6 +1,6 @@
 # JSX Breadcrumbs
 
-Mouselessly move your cursor among JSX tags and get overview of your components
+Mouselessly move your cursor among JSX tags and get overview of your components - made by [Nemo](https://twitter.com/phamhuyphat)
 
 ## Usage
 

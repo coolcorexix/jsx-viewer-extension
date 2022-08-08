@@ -34,16 +34,33 @@ Week 1:
 	✘ Combine two provider result into one @cancelled(22-08-06 14:50)
 	thought: this is undoable 
 	☐ @later write test
+	☐ @later update feature for { } expression inside ReactTree
 	thought: considering it...
-	☐ Publish it VS Code extension
-	☐ Write some README
-	☐ Test it for myself
-	☐ DM to five people I know who will love this extension
+	✔ Publish it VS Code extension @done(22-08-07 15:36)
+	✔ Write some README @done(22-08-06 15:29)
+		☐ Clarify paint points
+	
+	✔ Test it for myself [dogfooding] @done(22-08-07 15:51)
+	☐ DM to five people I know who will love this extension [dogfooding]
+		✔ Hung Viet Nguyen @done(22-08-08 21:11)
+		☐ Phuc Minh Tran
+		☐ Quan Pham 
+		☐ Saleshood design system v2 channel
+		☐ Lò rèn chuỗi khối 
+		☐ Group Minh Kien 
+	☐ Hook material
+		☐ Logo
+		☐ Copywrite
 	☐ Build backlink
-	☐ Logo
+		☐ Github profile
+		☐ README
+		☐ Product hunt
 	☐ Content to promote the extension, including thank authors of `react-json-parser`
 
 
-
+GOAL: with this vscode extension, I want to:
+	- Have user (over 100 users and 20 5 star in the first month)
+	- Experience a full flow of making a product at a more detail level compared to my last with DoughWatch
+	- State who I am in Twitter space (at least 50 followers from backlink in Github, Product Hunt and VsCode marketplace)
 
 

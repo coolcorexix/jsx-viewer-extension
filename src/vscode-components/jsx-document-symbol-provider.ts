@@ -28,7 +28,10 @@ export class JSXDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
 }
 
 function transformOutputJsonToSymbol(jsonOutput: IOutputJSON): vscode.DocumentSymbol {
-	console.log("🚀 ~ file: jsx-document-symbol-provider.ts ~ line 31 ~ transformOutputJsonToSymbol ~ jsonOutput", jsonOutput)
+	console.log("🚀 ~ file: jsx-document-symbol-provider.ts ~ line 31 ~ transformOutputJsonToSymbol ~ jsonOutput", jsonOutput);
+	if (!jsonOutput.sourceLocation.start || !jsonOutput.sourceLocation.end) {
+		throw new Error('Invalid sourceLocation');
+	}
 	const range = new vscode.Range(
 		new vscode.Position(jsonOutput.sourceLocation.start.line - 1, jsonOutput.sourceLocation.start.column),
 		new vscode.Position(jsonOutput.sourceLocation.end.line - 1, jsonOutput.sourceLocation.end.column)

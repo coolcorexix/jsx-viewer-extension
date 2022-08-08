@@ -13,7 +13,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:breadcrumbs.focusAndSelect"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -53,6 +53,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "babel-traverse": "^6.26.0",
     "babel-types": "^6.26.0",
+    "randombytes": "^2.1.0",
     "react-json-parser": "^0.2.1"
   }
 }
