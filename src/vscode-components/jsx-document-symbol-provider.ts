@@ -8,13 +8,13 @@ import { parseJSXtoJSONfromFile } from '../services/parseJSXtoJSONfromFile';
 export class JSXDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 	provideDocumentSymbols(document: vscode.TextDocument, token: vscode.CancellationToken): vscode.ProviderResult<vscode.SymbolInformation[] | vscode.DocumentSymbol[]> {
 		try {
-			console.log('at provide document: ', document.uri);
+
 			const fileText = document.getText();
 			const jsonForTreeView = parseJSXtoJSONfromFile(fileText);
 
 			const parsed = jsonForTreeView.map(transformOutputJsonToSymbol);
 			vscode.commands.executeCommand('vscode.executeDocumentSymbolProvider', document.uri).then(symbols => {
-				console.log("🚀 ~ file: jsx-document-symbol-provider.ts ~ line 17 ~ JSXDocumentSymbolProvider ~ vscode.commands.executeCommand ~ symbols", symbols)
+
 				writeFileSync(path.resolve(__dirname, './symbols.json'), JSON.stringify(symbols, null, 2))
 			})
 
@@ -28,7 +28,6 @@ export class JSXDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
 }
 
 function transformOutputJsonToSymbol(jsonOutput: IOutputJSON): vscode.DocumentSymbol {
-	console.log("🚀 ~ file: jsx-document-symbol-provider.ts ~ line 31 ~ transformOutputJsonToSymbol ~ jsonOutput", jsonOutput);
 	if (!jsonOutput.sourceLocation.start || !jsonOutput.sourceLocation.end) {
 		throw new Error('Invalid sourceLocation');
 	}

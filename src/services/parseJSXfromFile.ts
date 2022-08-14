@@ -3,6 +3,8 @@
 import * as babelParser from '@babel/parser';
 import traverse from '@babel/traverse'
 import * as babelTypesDetector from '@babel/types'
+// import path from 'path';
+// import { writeFileSync } from 'fs';
 
 export interface JSXNode {
   props: {
@@ -56,6 +58,7 @@ export const parseJSXfromFile = (code, options: {
       : () => true
 
   const ast = babelParser.parse(code, { plugins: ["jsx", "typescript"], sourceType: 'module' })
+  // writeFileSync(path.resolve(__dirname, './ast.json'), JSON.stringify(ast, null, 2))
 
   let trees: JSXNode[] = [];
   let level = 0
@@ -68,6 +71,52 @@ export const parseJSXfromFile = (code, options: {
       exit() {
         level--
       },
+    },
+    JSXFragment: {
+      enter() {
+        level++
+      },
+      exit() {
+        level--
+      },
+    },
+    // logic copy from JSXOpeningElement and trim
+    // can say it is more deliberate than the JSXOpeningElement 
+    JSXOpeningFragment: {
+      enter(path) {
+        let jsxNode = {};
+
+        jsxNode.sourceLocation = {
+          start: {
+            line: path.node.loc.start.line,
+            column: path.node.loc.start.column,
+          },
+        }
+
+        jsxNode.type = "<>";
+
+        if (jsxNode) {
+          path.parent.__node = jsxNode
+          if (level === 1) {
+            trees.push(jsxNode)
+          } else {
+            addChild(path.parentPath.parentPath.node, jsxNode)
+          }
+        }
+      },
+    },
+    JSXClosingFragment(path) {
+      const parent = path.findParent(p => {
+        return babelTypesDetector.isJSXFragment(p.node)
+      })
+      const parentNode = parent.node.__node;
+      parentNode.sourceLocation = {
+        ...parentNode.sourceLocation,
+        end: {
+          line: path.node.loc.end.line,
+          column: path.node.loc.end.column,
+        }
+      }
     },
     JSXOpeningElement: {
       enter(path) {
@@ -123,11 +172,9 @@ export const parseJSXfromFile = (code, options: {
       },
     },
     JSXClosingElement(path) {
-      const { node } = path
       const parent = path.findParent(p => babelTypesDetector.isJSXElement(p.node))
       const parentNode = parent.node.__node;
-      console.log("🚀 ~ file: parseJSXfromFile.ts ~ line 119 ~ JSXClosingElement ~ parentNode", parentNode)
-      console.log("🚀 ~ file: parseJSXfromFile.ts ~ line 123 ~ JSXClosingElement ~ path.node", path.node)
+
       parentNode.sourceLocation = {
         ...parentNode.sourceLocation,
         end: {

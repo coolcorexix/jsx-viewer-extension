@@ -44,18 +44,28 @@ Week 1:
 	☐ DM to five people I know who will love this extension [dogfooding]
 		✔ Hung Viet Nguyen @done(22-08-08 21:11)
 		☐ Phuc Minh Tran
-		☐ Quan Pham 
-		☐ Saleshood design system v2 channel
+		✔ Quan Pham @done(22-08-10 14:33)
+		✔ Content squad team @done(22-08-10 14:33)
+		✔ https://twitter.com/threehourcoffee @done(22-08-10 21:40)
 		☐ Lò rèn chuỗi khối 
 		☐ Group Minh Kien 
+		☐ https://twitter.com/hoangvvo
+		☐ https://github.com/shunjizhan
 	☐ Hook material
-		☐ Logo
-		☐ Copywrite
+		✔ Logo @done(22-08-14 22:05)
+		✔ Copywrite @done(22-08-14 22:05)
+	☐ SEO
+		☐ Keyword 
 	☐ Build backlink
 		☐ Github profile
-		☐ README
+		✔ README @done(22-08-14 22:05)
 		☐ Product hunt
+	✔ Update VS code marketplace description @done(22-08-14 22:05)
 	☐ Content to promote the extension, including thank authors of `react-json-parser`
+
+	☐ Support Fragment (Quan Pham's feedback) 
+	☐ Include render Props browsing (Quan Pham's feedback)
+
 
 
 GOAL: with this vscode extension, I want to:
