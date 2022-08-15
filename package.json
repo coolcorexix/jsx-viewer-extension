@@ -2,10 +2,10 @@
   "icon": "jsx-quick-keyboard-logo.jpeg",
   "publisher": "nemothecollector",
   "name": "jsx-breadcrumbs",
-  "displayName": "JSX Breadcrumbs",
+  "displayName": "React Breadcrumbs",
   "repository": "https://github.com/coolcorexix/jsx-viewer-extension",
   "description": "Most optimized way to browse React components",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "engines": {
     "vscode": "^1.51.0"
   },

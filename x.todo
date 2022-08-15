@@ -6,8 +6,8 @@ Week 1:
 		✔ Raise in on vscode slack @done(22-07-31 11:05)
 		app: progress further with DocumentSymbolProvider
 	✔ Nest JSX into current DocumentSymbolProvider @done(22-07-31 13:21)
-	☐ Solve Thenable does not resolve problem
-		thought: this maybe unfixable
+	✘ Solve Thenable does not resolve problem @cancelled(22-08-15 21:34)
+		thought: this maybe unfixable, it cause deadblock chawng?
 	✔ Solve the Parsed not add to Symbol list problem @done(22-07-31 18:32)
 		✔ Open a bunch of issue and tag every one @done(22-07-31 18:29)
 		✔ Clone code of Todo+ to see an example @done(22-07-31 18:29)
@@ -43,19 +43,19 @@ Week 1:
 	✔ Test it for myself [dogfooding] @done(22-08-07 15:51)
 	☐ DM to five people I know who will love this extension [dogfooding]
 		✔ Hung Viet Nguyen @done(22-08-08 21:11)
-		☐ Phuc Minh Tran
+		✔ Phuc Minh Tran @done(22-08-15 21:34)
 		✔ Quan Pham @done(22-08-10 14:33)
 		✔ Content squad team @done(22-08-10 14:33)
 		✔ https://twitter.com/threehourcoffee @done(22-08-10 21:40)
-		☐ Lò rèn chuỗi khối 
+		✔ Lò rèn chuỗi khối @done(22-08-15 21:34)
 		☐ Group Minh Kien 
 		☐ https://twitter.com/hoangvvo
 		☐ https://github.com/shunjizhan
 	☐ Hook material
 		✔ Logo @done(22-08-14 22:05)
 		✔ Copywrite @done(22-08-14 22:05)
-	☐ SEO
-		☐ Keyword 
+	✔ SEO @done(22-08-15 21:34)
+		✔ Keyword @done(22-08-15 21:34)
 	☐ Build backlink
 		☐ Github profile
 		✔ README @done(22-08-14 22:05)
@@ -63,7 +63,7 @@ Week 1:
 	✔ Update VS code marketplace description @done(22-08-14 22:05)
 	☐ Content to promote the extension, including thank authors of `react-json-parser`
 
-	☐ Support Fragment (Quan Pham's feedback) 
+	✔ Support Fragment (Quan Pham's feedback) @done(22-08-15 21:34)
 	☐ Include render Props browsing (Quan Pham's feedback)
 
 

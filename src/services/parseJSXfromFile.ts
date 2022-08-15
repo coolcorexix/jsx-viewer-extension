@@ -3,8 +3,9 @@
 import * as babelParser from '@babel/parser';
 import traverse from '@babel/traverse'
 import * as babelTypesDetector from '@babel/types'
-// import path from 'path';
-// import { writeFileSync } from 'fs';
+import path from 'path';
+import { writeFileSync } from 'fs';
+import { findJSXParentNode } from './findJSXParentNode';
 
 export interface JSXNode {
   props: {
@@ -52,13 +53,9 @@ export const parseJSXfromFile = (code, options: {
   plainText?: boolean,
 } = {}) => {
   const allowPlainText = !options.plainText
-  const isAllowed =
-    options && options.only && options.only.length
-      ? name => (options.only && options.only.includes(name))
-      : () => true
 
   const ast = babelParser.parse(code, { plugins: ["jsx", "typescript"], sourceType: 'module' })
-  // writeFileSync(path.resolve(__dirname, './ast.json'), JSON.stringify(ast, null, 2))
+  writeFileSync(path.resolve(__dirname, './ast.json'), JSON.stringify(ast, null, 2))
 
   let trees: JSXNode[] = [];
   let level = 0
@@ -120,22 +117,7 @@ export const parseJSXfromFile = (code, options: {
     },
     JSXOpeningElement: {
       enter(path) {
-        let jsxNode: JSXNode = {
-          props: {
-            children: [],
-          },
-          sourceLocation: {
-            start: {
-              line: 0,
-              column: 0,
-            },
-            end: {
-              line: 0,
-              column: 0,
-            }
-          },
-          type: '',
-        };
+        let jsxNode: JSXNode = {};
         const { name } = path.node;
 
         jsxNode.sourceLocation = {
@@ -161,14 +143,14 @@ export const parseJSXfromFile = (code, options: {
           }
         }
 
-        if (jsxNode && isAllowed(jsxNode.type)) {
-          path.parent.__node = jsxNode
-          if (level === 1) {
-            trees.push(jsxNode)
-          } else {
-            addChild(path.parentPath.parentPath.node, jsxNode)
-          }
+        path.parent.__node = jsxNode
+        if (level === 1) {
+          trees.push(jsxNode)
+        } else {
+          // addChild(path.parentPath.parentPath.node, jsxNode)
+          addChild(findJSXParentNode(path), jsxNode);
         }
+
       },
     },
     JSXClosingElement(path) {
