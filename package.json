@@ -5,7 +5,7 @@
   "displayName": "React Breadcrumbs",
   "repository": "https://github.com/coolcorexix/jsx-viewer-extension",
   "description": "Most optimized way to browse React components",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "engines": {
     "vscode": "^1.51.0"
   },

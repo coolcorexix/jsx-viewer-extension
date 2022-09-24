@@ -2,6 +2,8 @@
 
 Mouselessly move your cursor among JSX tags and get overview of your components - made by [Nemo](https://twitter.com/phamhuyphat)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/coolcorexil)
+
 ## Features
 
 - Move cursor among React Components quickly with keyboard
@@ -9,6 +11,7 @@ Mouselessly move your cursor among JSX tags and get overview of your components 
 
 ## Changelog
 
+- 0.1.8: Support Component in props
 - 0.1.5: Support React.Fragment
 
 ## Usage
