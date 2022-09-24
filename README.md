@@ -1,4 +1,4 @@
-# JSX Breadcrumbs
+# React Breadcrumbs ⚛️ 🥖
 
 Mouselessly move your cursor among JSX tags and get overview of your components - made by [Nemo](https://twitter.com/phamhuyphat)
 
