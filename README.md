@@ -27,3 +27,7 @@ Go to the repository to open an Issue or create PR: [https://github.com/coolcore
 All the effort is very very appreciated
 
 **Have fun coding!**
+
+---
+
+More tools by the same author: [nemothecollector.dev/products](https://nemothecollector.dev/products)
